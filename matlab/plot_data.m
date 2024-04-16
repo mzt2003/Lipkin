@@ -27,4 +27,20 @@ title(sprintf('Energy vs Entropy - N=%d, chi=%.2f, n=%d', N, chi, n));
 % 保存图形到文件
 saveas(gcf, strcat('../data/energy_entropy_N‘',num2str(N),'chi',num2str(chi),'n',num2str(n),'.png'));
 
+% 读取数据
+data = load('../data/entropy_vs_chi.txt');
 
+% 解析数据
+chi = data(:, 1);
+entropy = data(:, 2);
+
+% 绘图
+figure;
+plot(chi, entropy, '-o');
+xlabel('Chi');
+ylabel('Ground State Entropy');
+title('Ground State Entropy vs Chi for N=100, n=20');
+grid on;
+
+% 保存图像
+saveas(gcf, '../data/entropy_vs_chi.png');

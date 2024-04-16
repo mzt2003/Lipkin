@@ -12,7 +12,7 @@
 //////////////////////
 std::pair<Eigen::VectorXd, Eigen::MatrixXd> lipkin_tot(int N, double chi) {
     double J = N / 2.0;
-    double epsilon = 1.0;
+    double epsilon = 1;
 
     int size_H = 2 * J + 1;
     std::vector<double> mm(size_H);
@@ -135,6 +135,9 @@ void saveDataWithParams(const Eigen::VectorXd& Energy, const Eigen::VectorXd& En
     }
 }
 
+/////////////////////
+//save coefficients
+/////////////////////
 void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& filename) {
     std::ofstream file(filename);
     if (file.is_open()) {
@@ -143,6 +146,22 @@ void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& fil
     } else {
         std::cerr << "Unable to open file";
     }
+}
+
+
+//////////////////
+//calculate a certain system
+//////////////////
+void get_system(int N, double chi, int n){
+	auto [E, coefficients] = lipkin_tot(N, chi);
+    auto entropy = get_entropy(n, coefficients);
+
+    std::cout << "Energy:\n" << E << std::endl;
+    //std::cout << "coefficients:\n" << coefficients << std::endl;
+	std::cout << "Entropy:\n" << entropy << std::endl;
+	
+	saveDataWithParams(E, entropy, "../data/Energy_Entropy.txt", N, chi, n);
+	savecoefficients(coefficients, "../data/coefficients.txt") ;
 }
 
 

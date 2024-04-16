@@ -6,20 +6,34 @@
 #include <fstream>
 
 int main() {
-    int N = 100;       
-    double chi = 5; 
-    int n= 20;
-
-    auto [E, coefficients] = lipkin_tot(N, chi);
-    auto entropy = get_entropy(n, coefficients);
-
-    std::cout << "Energy:\n" << E << std::endl;
-    std::cout << "coefficients:\n" << coefficients << std::endl;
-	std::cout << "Entropy:\n" << entropy << std::endl;
+    get_system(100, 1, 20); //int N, double chi, int n
+	///////
 	
-	saveDataWithParams(E, entropy, "../data/data.txt", N, chi, n);
-	savecoefficients(coefficients, "../data/coefficients.txt") ;
+	int N = 100;
+    int n = 20;
+	int num_chi = 301; 
+    std::vector<double> chis(num_chi);
+    std::vector<double> gsentropy(num_chi);
 
+    for (int i = 0; i < num_chi; ++i) {
+        double chi = 3.0 * i / (num_chi - 1); 
+        chis[i] = chi;
+        auto [E, coefficients] = lipkin_tot(N, chi);
+        auto entropy = get_entropy(n, coefficients);
+        gsentropy[i] = entropy(0); // 只取基态的entropy
+    }
+    std::ofstream file("../data/entropy_vs_chi.txt");
+    if (file.is_open()) {
+        for (int i = 0; i < num_chi; ++i) {
+            file << chis[i] << " " << gsentropy[i] << std::endl;
+        }
+        file.close();
+    } else {
+        std::cerr << "Unable to open file" << std::endl;
+        return -1;
+    }
+
+	
     return 0;
 }
 
