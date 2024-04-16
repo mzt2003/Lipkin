@@ -109,6 +109,9 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
         for (int i = 0; i < eigvals.size(); ++i) {
         	if (eigvals[i] > 0) {
             	entropy(ind_e) -= eigvals[i] * std::log(eigvals[i]);
+            }else {
+                std::cerr << "Warning: log of non-positive number, ind_e: " << ind_e
+                          << ", i: " << i << ", eigval: " << eigvals[i] << std::endl;
             }	
         }
     }
