@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)  # 指定 CMake 的最低版本需求
+project(Lipkin)                  # 定义项目名称
+
+# 设置 C++ 标准
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# 添加包含头文件目录
+include_directories(src)                  # 头文件目录
+include_directories(${sub_dir})      # 第三方库头文件目录
+include_directories("/opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3")  # 包含Eigen头文件
+
+add_subdirectory(external/cg)
+
+# 
+add_executable(Lipkin src/main.cpp src/functions.cpp)
+target_link_libraries(Lipkin wignerSymbols)
+
+# 指定可执行文件的输出目录
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+
+

@@ -5,9 +5,10 @@ cmake ..  # 生成 Makefile
 make      # 构建项目
 
 echo "Running C++ program..."
-../bin/data_generator  # 执行生成的可执行文件
+../bin/Lipkin  # 执行生成的可执行文件
 
 echo "Running MATLAB script..."
+export PATH="/Applications/MATLAB_R2023a.app/bin:$PATH"
 matlab -batch "run('../matlab/plot_data.m')"
 
 echo "Done."
