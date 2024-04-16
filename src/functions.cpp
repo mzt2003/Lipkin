@@ -65,6 +65,7 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
     int size_H = 2 * (j1 + j2) + 1;
     std::vector<Eigen::MatrixXd> reduced_rho(size_H, Eigen::MatrixXd::Zero(mm1.size(), mm1.size()));
 	Eigen::MatrixXd cg=Eigen::MatrixXd::Zero(mm1.size(), mm2.size());
+	Eigen::MatrixXd c=Eigen::MatrixXd::Zero(mm1.size(), mm2.size());
 
 	std::cout << "Start CG coefficients table calculation" << std::endl;
 	for (int ii=0; ii<mm1.size(); ++ii){
@@ -137,6 +138,15 @@ void saveDataWithParams(const Eigen::VectorXd& Energy, const Eigen::VectorXd& En
     }
 }
 
+void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& filename) {
+    std::ofstream file(filename);
+    if (file.is_open()) {
+        file << coefficient << "\n";
+        file.close();
+    } else {
+        std::cerr << "Unable to open file";
+    }
+}
 
 
 
