@@ -79,14 +79,11 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
     for (int ind_e = 0; ind_e < size_H; ++ind_e) {
     	std::cout << "Process:"<< ind_e << '/'<< size_H << std::endl;
         for (int i = 0; i < mm1.size(); ++i) {
-            for (int j = 0; j < mm1.size(); ++j) {
-                for (int k = 0; k < mm2.size(); ++k) {
-                    double t1 = cg(i, k) * coefficients(i + k, ind_e);
-                    double t2 = cg(j, k) * coefficients(j + k, ind_e);                
-                    reduced_rho[ind_e](i, j) += t1 * t2;
-                }
+            for (int j = 0; j < mm2.size(); ++j) {
+                c(i, j) = cg(i, j) * coefficients(i + j, ind_e);                
             }
         }
+        reduced_rho[ind_e] = c * c.transpose();
     }
     std::cout << "Finish rho_matrix calculation" << std::endl;
 
