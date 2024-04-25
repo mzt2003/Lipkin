@@ -7,9 +7,9 @@
 #include <cmath>
 #include <fstream>
 
-//////////////////////
+//////////////////////////////////////////////////////////////
 // get the energies and wave functions of Lipkin model with para N and chi.
-//////////////////////
+//////////////////////////////////////////////////////////////
 std::pair<Eigen::VectorXd, Eigen::MatrixXd> lipkin_tot(int N, double chi) {
     double J = N / 2.0;
     double epsilon = 1;
@@ -48,10 +48,10 @@ std::pair<Eigen::VectorXd, Eigen::MatrixXd> lipkin_tot(int N, double chi) {
 
     return std::make_pair(E, coefficients);
 }
-/////////////////////////////////////
+///////////////////////////////////////////////////////////////
 //entropy is determined when the parameter of the system n, N, chi is known
 //get the entropy given n and the wave function under basis |J,M> 
-/////////////////////////////////////
+///////////////////////////////////////////////////////////////
 Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
     int N = coefficients.rows() - 1;
     double J = N / 2.0;
@@ -77,7 +77,7 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
 
 	std::cout << "Start rho_matrix calculation" << std::endl;
     for (int ind_e = 0; ind_e < size_H; ++ind_e) {
-    	std::cout << "Process:"<< ind_e << '/'<< size_H << std::endl;
+    	//std::cout << "Process:"<< ind_e << '/'<< size_H << std::endl;
         for (int i = 0; i < mm1.size(); ++i) {
             for (int j = 0; j < mm2.size(); ++j) {
                 c(i, j) = cg(i, j) * coefficients(i + j, ind_e);                
@@ -88,6 +88,7 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
     std::cout << "Finish rho_matrix calculation" << std::endl;
 
 	// Saving and printing reduced_rho matrices
+	if (debug_mode){
     for (int ind_e = 0; ind_e < size_H; ++ind_e) {
         std::string filename = "../data/reduced_rho_" + std::to_string(ind_e) + ".txt";
         std::ofstream file(filename);
@@ -96,10 +97,10 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
             file.close();
         } else {
             std::cerr << "Unable to open file: " << filename << std::endl;
-        }
-        
+        }       
         //  print to console
        // std::cout << "Reduced Rho Matrix " << ind_e << ":\n" << reduced_rho[ind_e] << "\n\n";
+    }
     }
     
 	std::cout << "Start diagonalizing rho_matrix " << std::endl;    
@@ -110,8 +111,8 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
         	if (eigvals[i] > 0) {
             	entropy(ind_e) -= eigvals[i] * std::log(eigvals[i]);
             }else {
-                std::cerr << "Warning: log of non-positive number, ind_e: " << ind_e
-                          << ", i: " << i << ", eigval: " << eigvals[i] << std::endl;
+                //std::cerr << "Warning: log of non-positive number, ind_e: " << ind_e
+                //          << ", i: " << i << ", eigval: " << eigvals[i] << std::endl;
             }	
         }
     }
@@ -119,30 +120,37 @@ Eigen::VectorXd get_entropy(int n, const Eigen::MatrixXd& coefficients) {
     return entropy;
 }
 
-/////////////////////
-//save energy-entropy
-/////////////////////
-void saveDataWithParams(const Eigen::VectorXd& Energy, const Eigen::VectorXd& Entropy, const std::string& filename, int N, double chi, int n) {
-    std::ofstream file(filename);
+/////////////////////////////////////////////////
+//save para and data
+/////////////////////////////////////////////////
+void saveDataWithParams(const std::vector<Eigen::VectorXd>& results, 
+                        const std::string& filename, 
+                        const std::vector<std::string>& params) {
+ std::ofstream file(filename);
     if (file.is_open()) {
-        // para
-            std::cout << "NNNNNNNNNNN" << chi << std::endl;
-
-        file << N << " " << chi << " " << n << "\n";
-
-        // results: energy,  entropy
-        for (int i = 0; i < Energy.size(); ++i) {
-            file << Energy(i) << " " << Entropy(i) << "\n";
+        for (const auto& param : params) {
+            file << param << " ";
+        }
+        file << "\n";
+        
+        for (int i = 0; i < results.front().size(); ++i) {
+            for (const auto& vec : results) {
+                if (vec.size() > i) {  
+                    file << vec(i) << " ";
+                }
+            }
+            file << "\n";
         }
         file.close();
     } else {
-        std::cerr << "Unable to open file";
+        std::cerr << "Unable to open file\n";
     }
 }
 
-/////////////////////
+
+//////////////////////////////////////////////////
 //save coefficients
-/////////////////////
+//////////////////////////////////////////////////
 void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& filename) {
     std::ofstream file(filename);
     if (file.is_open()) {
@@ -154,22 +162,112 @@ void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& fil
 }
 
 
-//////////////////
+/////////////////////////////////////////////////
 //calculate a certain system
-//////////////////
-void get_system(int N, double chi, int n){
+/////////////////////////////////////////////////
+void get_system(int N, double chi, int n, const std::string& filename){
 	auto [E, coefficients] = lipkin_tot(N, chi);
     auto entropy = get_entropy(n, coefficients);
-    std::cout << "NNNNNNNNNNN" << chi << std::endl;
-    std::cout << "Energy:\n" << E << std::endl;
-    //std::cout << "coefficients:\n" << coefficients << std::endl;
-	std::cout << "Entropy:\n" << entropy << std::endl;
-	
-	saveDataWithParams(E, entropy, "../data/Energy_Entropy.txt", N, chi, n);
-	savecoefficients(coefficients, "../data/coefficients.txt") ;
+    std::vector<Eigen::VectorXd> results = {E, entropy};
+	std::vector<std::string> parameters = {std::to_string(N),std::to_string(chi),std::to_string(n)};
+	saveDataWithParams(results, filename  , parameters);
+    if(debug_mode){
+    	std::cout << "Energy:\n" << E << std::endl;
+    	//std::cout << "coefficients:\n" << coefficients << std::endl;
+		std::cout << "Entropy:\n" << entropy << std::endl;
+		savecoefficients(coefficients, "../data/coefficients.txt") ;
+	}
+
 }
+/////////////////////////////////////////////////
+//save gs_S_vs_chi
+/////////////////////////////////////////////////
+ void gs_S_vs_chi(int N, int n, double chi_1, double chi_2, int num_chi, const std::string& filename) {
+    Eigen::VectorXd chis = Eigen::VectorXd::Zero(num_chi);
+    Eigen::VectorXd gsentropy = Eigen::VectorXd::Zero(num_chi);
+
+    for (int i = 0; i < num_chi; ++i) {
+        double chi = chi_1+ (chi_2-chi_1) * i / (num_chi - 1); 
+        chis(i) = chi;
+        auto [E, coefficients] = lipkin_tot(N, chi);
+        auto entropy = get_entropy(n, coefficients);
+        gsentropy(i) = entropy(0); 
+    }
+    
+    std::vector<Eigen::VectorXd> results = {chis, gsentropy};
+	std::vector<std::string> parameters = {std::to_string(N),std::to_string(n)};
+	saveDataWithParams(results,filename , parameters);
+
+	}
+
+/////////////////////////////////////////////////
+//save gs_S_vs_n
+/////////////////////////////////////////////////
+ void gs_S_vs_n(int N, double chi, int n_1, int n_2, int interval, const std::string& filename) {
+    int num_n= (n_2-n_1)/ interval +1;
+    Eigen::VectorXd ns = Eigen::VectorXd::Zero(num_n);
+    Eigen::VectorXd gsentropy = Eigen::VectorXd::Zero(num_n);
+
+    for (int i = 0; i < num_n; ++i) {
+        double n = n_1+ i*interval; 
+        ns(i) = n;
+        auto [E, coefficients] = lipkin_tot(N, chi);
+        auto entropy = get_entropy(n, coefficients);
+        gsentropy(i) = entropy(0); 
+    }
+    
+    std::vector<Eigen::VectorXd> results = {ns, gsentropy};
+	std::vector<std::string> parameters = {std::to_string(N),std::to_string(chi)};
+	saveDataWithParams(results, filename , parameters);
+
+	}
 
 
 
 
 
+
+
+
+void gs_S_vs_chi_n(int N, double chi_1, double chi_2, int num_chi, int n_1, int n_2, int interval , const std::string& filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Unable to open file" << std::endl;
+        return;
+    }
+
+    // 生成chi和n的值
+    std::vector<double> chis(num_chi);
+    double chi_step = (chi_2 - chi_1) / (num_chi - 1);
+    for (int i = 0; i < num_chi; ++i) {
+        chis[i] = chi_1 + i * chi_step;
+    }
+
+    int num_n= (n_2-n_1)/ interval +1;
+    std::vector<int> ns(num_n);
+    for (int i = 0; i < num_n; ++i) {
+        ns[i] = n_1 + i*interval;
+    }
+
+    // 写入文件
+    file << N << std::endl;
+    for (double chi : chis) {
+        file << chi << " ";
+    }
+    file << std::endl;
+    for (int n : ns) {
+        file << n << " ";
+    }
+    file << std::endl;
+
+    // 计算gs_S并写入文件
+    for (int n : ns) {
+        for (double chi : chis) {
+        	auto [E, coefficients] = lipkin_tot(N, chi);
+        	auto entropy = get_entropy(n, coefficients);
+            file << entropy(0) << " ";
+        }
+        file << std::endl;
+    }
+    file.close();
+}
