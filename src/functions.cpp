@@ -126,6 +126,8 @@ void saveDataWithParams(const Eigen::VectorXd& Energy, const Eigen::VectorXd& En
     std::ofstream file(filename);
     if (file.is_open()) {
         // para
+            std::cout << "NNNNNNNNNNN" << chi << std::endl;
+
         file << N << " " << chi << " " << n << "\n";
 
         // results: energy,  entropy
@@ -158,7 +160,7 @@ void savecoefficients(const Eigen::MatrixXd& coefficient, const std::string& fil
 void get_system(int N, double chi, int n){
 	auto [E, coefficients] = lipkin_tot(N, chi);
     auto entropy = get_entropy(n, coefficients);
-
+    std::cout << "NNNNNNNNNNN" << chi << std::endl;
     std::cout << "Energy:\n" << E << std::endl;
     //std::cout << "coefficients:\n" << coefficients << std::endl;
 	std::cout << "Entropy:\n" << entropy << std::endl;
