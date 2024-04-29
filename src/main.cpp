@@ -23,18 +23,20 @@ int main() {
 	//gs_S_vs_chi_n(100, 0, 3.5, 300, 10, 90, 5, "../data/S_vs_chi_n.txt");
 	//gs_S_vs_chi_n(100, 0, 3.5, 5, 40, 60, 5, "../data/S_vs_chi_n.txt");
 	
-    get_sys2(10, 20, 1, 1, 1/29.0, 1/29.0, 1/29.0);
+    //get_sys2(10, 20, 1, 1, 1/29.0, 1/29.0, 1/29.0);
 
 
-	 std::cout << "classsssssssssssssssssssss "<< std::endl;
 
-	QuantumSystem qs(10, 20, 1, 1, 1/29.0, 1/29.0, 1/29.0);
+	QuantumSystem qs(20, 10, 1, 1, 1/29.0, 1/29.0, 1/29.0);
+	//qs.temp();
     //qs.computeHamiltonian();
-    //qs.solveEigenSystem();
-    //qs.computeEntropy();
-    std::cout<<"entropy"<<qs.getGroundStateEntropy()<<std::endl;
-    std::cout<<"entropy"<<qs.getEntropy()<<std::endl;
-    std::cout<<"entropy"<<qs.getEigenvalues()<<std::endl;
+   // qs.solveEigenSystem();
+   // qs.computeEntropy();
+	//double a = qs.getGroundStateEntropy();
+    //std::cout<< "entropyyyyyyyy" << a <<std::endl;
+	qs.computeH1();
+   // std::cout<<"entropy2445"<<qs.getEntropy()<<std::endl;
+  //  std::cout<<"entropy65437"<<qs.getEigenvalues()<<std::endl;
 
     qs.outputResults("../data/Energy_Entropy33.txt");
     

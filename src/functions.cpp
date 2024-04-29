@@ -6,7 +6,8 @@
 #include <Eigen/Dense> 
 #include <cmath>
 #include <fstream>
-
+using namespace Eigen;
+using namespace std;
 //////////////////////////////////////////////////////////////
 // get the energies and wave functions of Lipkin model with para N and chi.
 //////////////////////////////////////////////////////////////
@@ -375,7 +376,8 @@ void get_sys2(int n1, int n2, double ep1, double ep2, double V1, double V2, doub
 
 
 QuantumSystem::QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, double V2, double V12)
-    : n1(n1), n2(n2), ep1(ep1), ep2(ep2), V1(V1), V2(V2), V12(V12) {
+    : n1(n1), n2(n2), ep1(ep1), ep2(ep2), V1(V1), V2(V2), V12(V12),s1(n1 + 1), s2(n2 + 1),  // 确保这里s1和s2先被初始化
+       reduced_rho_1(s1 * s2),reduced_rho_2(s1 * s2) {
     s1 = n1 + 1;
     s2 = n2 + 1;
     m1.resize(s1);
@@ -389,6 +391,17 @@ QuantumSystem::QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, 
         m2[i] = -n2 / 2.0 + i;
     }
     H = MatrixXd::Zero(s1 * s2, s1 * s2);
+    H1= MatrixXd::Zero(s1 , s1 );
+    H2= MatrixXd::Zero(s2,  s2);
+    H1_expected=VectorXd(s1*s2);
+    H2_expected=VectorXd(s1*s2);
+    for (Eigen::MatrixXd& matrix : reduced_rho_1) {
+        matrix = MatrixXd::Zero(s1, s1);  
+    }
+    for (Eigen::MatrixXd& matrix : reduced_rho_2) {
+        matrix = MatrixXd::Zero(s2, s2); 
+    }
+    entropy = VectorXd::Zero(s1 * s2);
 }
 
 void QuantumSystem::computeHamiltonian() {
@@ -438,9 +451,66 @@ void QuantumSystem::computeHamiltonian() {
     }
     hamiltonianComputed = true;
     eigenSystemSolved = false;  // Any new computation of H requires re-solving the eigen system
-    entropyComputed = false; 
 }
+void QuantumSystem::computeH1(){
+	for (int i = 0; i < s1; ++i) {
+        H1(i, i) = ep1 * m1[i];
+    }
+    for (int i = 0; i < s1 - 2; ++i) {
+        double m = m1[i];
+        double temp1 = -V1 / 2;
+        double t2 = j1 * (j1 + 1) - m * (m + 1);
+        double t3 = j1 * (j1 + 1) - (m + 1) * (m + 2);
+        double tt = temp1 * std::sqrt(t2 * t3);
+        H1(i, i + 2) = tt;
+        H1(i + 2, i) = tt;
+    }
+    H1Computed = true;
+    H1_expected_Computed = false;
+}
+void QuantumSystem::computeH2(){
+	for (int i = 0; i < s2; ++i) {
+        H2(i, i) = ep2 * m2[i];
+    }
 
+    for (int i = 0; i < s2 - 2; ++i) {
+        double m = m2[i];
+        double temp1 = -V2 / 2;
+        double t2 = j2 * (j2 + 1) - m * (m + 1);
+        double t3 = j2 * (j2 + 1) - (m + 1) * (m + 2);
+        double tt = temp1 * std::sqrt(t2 * t3);
+        H2(i, i + 2) = tt;
+        H2(i + 2, i) = tt;
+    }
+    H2Computed= true;
+    H2_expected_Computed = false;
+}
+void QuantumSystem::computeH1_expected(){
+	if (!H1Computed) {
+        computeH1();  
+    }
+    if (!reduced_rho_1_Computed){
+    	computeEntropy();
+    }
+    for (int ii=0; ii< s1*s2; ++ii){
+        Eigen::MatrixXd product = H1 * reduced_rho_1[ii];
+    	H1_expected(ii) = product.trace();
+    }
+    H1_expected_Computed = true ;
+}
+void QuantumSystem::computeH2_expected(){
+	if (!H2Computed) {
+        computeH2();  
+    }
+    if (!reduced_rho_2_Computed){
+    	computeEntropy();
+    }
+    for (int ii=0; ii< s1*s2; ++ii){
+        Eigen::MatrixXd product = H2 * reduced_rho_2[ii];
+    	H2_expected(ii) = product.trace();
+    }
+    H2_expected_Computed = true;
+}
 void QuantumSystem::solveEigenSystem() {
     if (!hamiltonianComputed) {
         computeHamiltonian();  // Ensure Hamiltonian is computed
@@ -454,19 +524,17 @@ void QuantumSystem::solveEigenSystem() {
     eigenSystemSolved = true;
     entropyComputed = false; 
 }
-
 void QuantumSystem::computeEntropy() {
-if (!eigenSystemSolved) {
+	if (!eigenSystemSolved) {
         solveEigenSystem();  // Ensure eigen system is solved
     }
     // Implement your entropy computation here
-    vector<MatrixXd> reduced_rho_1(s1 * s2, MatrixXd::Zero(s1,s1));
-    entropy = VectorXd::Zero(s1 * s2);
     for (int ii = 0; ii < s1 * s2; ++ii) {
         Map<MatrixXd> t1(eigenvectors.col(ii).data(), s2, s1);
         MatrixXd rho = t1.transpose() * t1;
-        reduced_rho_1[ii] = rho;       
-         std::string filename = "../data/reduced_rho111_" + std::to_string(ii) + ".txt";
+        reduced_rho_1[ii] = rho;  
+        reduced_rho_2[ii] = t1 * t1.transpose();  
+        std::string filename = "../data/reduced_rho111_" + std::to_string(ii) + ".txt";
         std::ofstream file1(filename);
         if (file1.is_open()) {
          file1 << reduced_rho_1[ii] << "\n";
@@ -474,8 +542,8 @@ if (!eigenSystemSolved) {
         } else {
             std::cerr << "Unable to open file: " << filename << std::endl;
         }        
-     }   
-    std::cout << "Start diagonalizing rho_matrix " << std::endl;    
+     }  
+           
     for (int ind_e = 0; ind_e < s1*s2; ++ind_e) {
         VectorXd eigvals = SelfAdjointEigenSolver<MatrixXd>(reduced_rho_1[ind_e]).eigenvalues();
        // std::cout << "eigenvals "<< eigvals << std::endl; 
@@ -490,13 +558,18 @@ if (!eigenSystemSolved) {
     }
 	gs_S=entropy(0);
     entropyComputed = true;
+    reduced_rho_1_Computed= true ;
+    reduced_rho_2_Computed= true ;
+    H1_expected_Computed = false;
+    H2_expected_Computed = false;
+
 }
 
 double QuantumSystem::getGroundStateEntropy() {
     if (!entropyComputed) {
         computeEntropy();  // Ensure entropy is computed
     }
-    return entropy[0];  // Assuming entropy for ground state is the first element
+    return gs_S;  // Assuming entropy for ground state is the first element
 }
 double QuantumSystem::getGroundStateEnergy() {
     if (!eigenSystemSolved) {
@@ -504,10 +577,9 @@ double QuantumSystem::getGroundStateEnergy() {
     }
     return eigenvalues[0];   
 }
-
 const MatrixXd& QuantumSystem::getHamiltonian() {
     if (!hamiltonianComputed) {
-        solveEigenSystem();  
+        computeHamiltonian();  
     }
     return H;   
 }
@@ -525,15 +597,34 @@ const MatrixXd& QuantumSystem::getEigenvectors() {
 }
 const VectorXd& QuantumSystem::getEntropy() {
     if (!entropyComputed) {
-        solveEigenSystem();  
+        computeEntropy();  
     }
     return entropy;   
 }
+const VectorXd& QuantumSystem::getH1_expected(){
+	if (!H1_expected_Computed) {
+        computeH1();  
+    }
+    return H1_expected; 
+}
+const VectorXd& QuantumSystem::getH2_expected(){
+	if (!H2_expected_Computed) {
+        computeH2();  
+    }
+    return H2_expected; 
+}
+
 void QuantumSystem::outputResults(const string& filename) {
-    // Implement your result output here
+    if (!H1_expected_Computed) {
+        computeH1_expected();  
+    }
+    if (!H2_expected_Computed) {
+        computeH2_expected();  
+    }
+    //  result output 
     ofstream file(filename);
     for (int i = 0; i < eigenvalues.size(); ++i) {
-        file << eigenvalues[i] << " " << entropy[i] << endl;
+        file << eigenvalues[i] << " " << entropy[i] <<" "<<H1_expected[i] <<" "<<H2_expected[i] << endl;
     }
     file.close();
 }

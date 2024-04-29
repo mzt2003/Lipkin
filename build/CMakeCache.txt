@@ -14,9 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Path to a file.
-ARMADILLO_INCLUDE_DIR:PATH=ARMADILLO_INCLUDE_DIR-NOTFOUND
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -254,22 +251,11 @@ Lipkin_SOURCE_DIR:STATIC=/Users/mzt/documents/Lipkin_project
 //Generate code coverage report
 WITH_COVERAGE:BOOL=OFF
 
-//Value Computed by CMake
-wignerSymbols_BINARY_DIR:STATIC=/Users/mzt/documents/Lipkin_project/build/external/cg
-
-//Value Computed by CMake
-wignerSymbols_IS_TOP_LEVEL:STATIC=OFF
-
-//Value Computed by CMake
-wignerSymbols_SOURCE_DIR:STATIC=/Users/mzt/documents/Lipkin_project/external/cg
-
 
 ########################
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: ARMADILLO_INCLUDE_DIR
-ARMADILLO_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR

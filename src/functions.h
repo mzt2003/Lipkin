@@ -29,18 +29,36 @@ private:
     double ep1, ep2, V1, V2, V12, j1, j2;
     vector<double> m1, m2;
     MatrixXd H;
+    MatrixXd H1, H2;
     VectorXd eigenvalues;
     MatrixXd eigenvectors;
     VectorXd entropy;
+    VectorXd H1_expected, H2_expected;
+    std::vector<Eigen::MatrixXd> reduced_rho_1;
+    std::vector<Eigen::MatrixXd> reduced_rho_2;
     double gs_E, gs_S;
     bool hamiltonianComputed = false;
     bool eigenSystemSolved = false;
     bool entropyComputed = false;
-
+    bool H1Computed = false;
+    bool H2Computed = false;
+    bool H1_expected_Computed = false;
+    bool H2_expected_Computed = false;
+    bool reduced_rho_1_Computed = false;
+    bool reduced_rho_2_Computed = false;
 
 public:
     // Constructor
     QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, double V2, double V12);
+    // Methods
+    void computeHamiltonian();
+    void solveEigenSystem();
+    void computeEntropy();
+    void computeH1();
+	void computeH2();
+	void computeH1_expected();
+	void computeH2_expected();
+    void outputResults(const string& filename);
     
     const MatrixXd& getHamiltonian() ;
     const VectorXd& getEigenvalues();
@@ -48,12 +66,9 @@ public:
     const VectorXd& getEntropy() ;
     double getGroundStateEnergy();
     double getGroundStateEntropy();
-
-    // Methods
-    void computeHamiltonian();
-    void solveEigenSystem();
-    void computeEntropy();
-    void outputResults(const string& filename);
+    const VectorXd& getH1_expected();
+    const VectorXd& getH2_expected();
+    
 };
 
 #endif
