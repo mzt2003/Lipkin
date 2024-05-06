@@ -6,42 +6,43 @@
 #include <Eigen/Dense>
 #include <cmath>
 
-
 using namespace Eigen;
 using namespace std;
 bool debug_mode=1;
 
 int main() {
 	// Calculate a certain system, save E and S
-    get_system(30, 1.0, 20, "../data/Energy_Entropy.txt"); //int N, double chi, int n
-	// Calculate gs_S_vs_chi, save to "../data/S_vs_chi.txt"
-	//gs_S_vs_chi(100, 20, 0, 3.5, 100, "../data/S_vs_chi.txt"); //int N, int n, double chi_1, chi_2, num_chi
-	//
-	//gs_S_vs_n(100, 2, 10, 90, 2, "../data/S_vs_n.txt"); //int N, double chi, int n1 , n2, interval
-	///////
-	// input: int N double chi_1, chi_2, num_chi , int n1 , n2, interval, path
-	//gs_S_vs_chi_n(100, 0, 3.5, 300, 10, 90, 5, "../data/S_vs_chi_n.txt");
-	//gs_S_vs_chi_n(100, 0, 3.5, 5, 40, 60, 5, "../data/S_vs_chi_n.txt");
+    //get_system(30, 1.0, 20, "../data/sys1_Energy_Entropy.txt"); //int N, double chi, int n
+    
+	// Calculate gs_S_vs_chi, save chi and gsS to "../data/S_vs_chi.txt"
+	//gs_S_vs_chi(30, 20, 0, 3.5, 100, "../data/sys1_S_vs_chi.txt"); //int N, int n, double chi_1, chi_2, num_chi
 	
-    //get_sys2(10, 20, 1, 1, 1/29.0, 1/29.0, 1/29.0);
-
-
-
-	QuantumSystem qs(20, 10, 1, 1, 1/29.0, 1/29.0, 1/29.0);
-	//qs.temp();
-    //qs.computeHamiltonian();
-   // qs.solveEigenSystem();
-   // qs.computeEntropy();
-	//double a = qs.getGroundStateEntropy();
-    //std::cout<< "entropyyyyyyyy" << a <<std::endl;
-	qs.computeH1();
-   // std::cout<<"entropy2445"<<qs.getEntropy()<<std::endl;
-  //  std::cout<<"entropy65437"<<qs.getEigenvalues()<<std::endl;
-
-    qs.outputResults("../data/Energy_Entropy33.txt");
+	//save n and gsS
+	//gs_S_vs_n(100, 2, 10, 90, 2, "../data/sys1_S_vs_n.txt"); //int N, double chi, int n1 , n2, interval
+	
+	// save chi, n and gsS, input: int N double chi_1, chi_2, num_chi , int n1 , n2, interval, path
+	//gs_S_vs_chi_n(100, 0, 3.5, 5, 40, 60, 5, "../data/sys1_S_vs_chi_n.txt");
+	
+	QuantumSystem qs2(20, 10, 1, 1, 0.01/29.0, 0.01/29.0, 10/29.0);
+    qs2.outputResults("../data/sys2_Energy_Entropy_.txt");
     
-    
-    
+     double v_1=0/30.0;
+     double v_2=1/7.5 ;
+     int num_v=4 ;
+     double v12_1=0/30.0;
+     double v12_2= 1/2.0;
+     int num_v12=4 ;
+     const std::string& filename="../data/sys2_S_v_v12.txt";
+     const std::vector<double>& v1s={0.01/30.0,0.03/30.0,0.1/30.0,0.3/30.0,1/30.0,3/30.0};
+      const std::vector<double>& v2s={0.01/30.0,0.03/30.0,0.1/30.0,0.3/30.0,1/30.0,3/30.0};
+     //n1,n2,ep1,ep2, double v_1,double v_2, int num_v, double v12_1 double v12_2, int num_v12, const std::string& filename
+    //write_sys2_gsS_v_v12(20, 10, 1, 1,  v_1,v_2, num_v, v12_1 ,v12_2, num_v12, filename);
+    //write_sys2_gsS_v12(20, 10, 1, 1, 3/30.0, 3/30.0, v12_1, v12_2, 100, "../data/sys2_S_v12.txt");
+    //write_sys2_gsS_v12(20, 10, 1, 1, 0.3/30.0, 0.3/30.0, v12_1, v12_2, 100, "../data/sys2_S_v12.txt");
+    //write_sys2_gsS_v12(20, 10, 1, 1, 10/30.0, 10/30.0, v12_1, v12_2, 100, "../data/sys2_S_v12.txt");
+	//write_sys2_gsS_v12_multi(20,10,1,1,v1s,v2s,v12_1, v12_2, 100, "../data/sys2_S_v12_multi.txt") ;
+    //write_sys2_h1h2_v12(20, 10, 1, 1, 0.00/30.0, 0.00/30.0, v12_1, v12_2, 100, "../data/sys2_h1h2_v12.txt");
+
     return 0;
 }
 

@@ -374,6 +374,112 @@ void get_sys2(int n1, int n2, double ep1, double ep2, double V1, double V2, doub
    
 }
 
+void write_sys2_gsS_v_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, int num_v, double v12_1, double v12_2, int num_v12, const std::string& filename){
+     double N=n1+n2;
+       std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Unable to open file" << std::endl;
+    }
+    // 生成v,v12的值
+    std::vector<double> vs(num_v);
+    double v_step = (v_2 - v_1) / (num_v - 1);
+    for (int i = 0; i < num_v; ++i) {
+        vs[i] = v_1 + i * v_step;
+    }
+    std::vector<double> v12s(num_v12);
+    double v12_step = (v12_2 - v12_1) / (num_v12 - 1);
+    for (int i = 0; i < num_v12; ++i) {
+        v12s[i] = v12_1 + i * v12_step;
+                std::cout<<"v12s"<<v12s[i]<<std::endl;
+    }
+
+    // 写入文件
+    file << N << std::endl;
+    for (double v : vs) {
+        file << v*N << " ";
+    }
+    file << std::endl;
+    for (double v12 : v12s) {
+        file << v12*N << " ";
+    }
+    file << std::endl;
+    // 计算gs_S并写入文件
+    for (double v12 : v12s) {
+        std::cout << "Process:"<< v12  << '/'<< v12_2 << std::endl;
+        for (double v : vs) {       	
+        	QuantumSystem qs3(n1, n2, ep1,ep2, v,v,v12);
+        	double a = qs3.getGroundStateEntropy();
+            file << a << " ";
+        }
+        file << std::endl;
+    }
+    file.close();
+}
+
+void write_sys2_gsS_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, double v12_1, double v12_2, int num_v12, const std::string& filename){
+    double N=n1+n2;
+    Eigen::VectorXd v12s = Eigen::VectorXd::Zero(num_v12);
+    Eigen::VectorXd gsentropy = Eigen::VectorXd::Zero(num_v12);
+	double v12_step = (v12_2 - v12_1) / (num_v12 - 1);
+    for (int i = 0; i < num_v12; ++i) {
+        double v12 = v12_1 + i * v12_step;
+        v12s[i]= v12;
+        QuantumSystem qs3(n1, n2, ep1,ep2, v_1,v_2,v12);
+        gsentropy[i] = qs3.getGroundStateEntropy();
+    }
+    std::vector<Eigen::VectorXd> results = {v12s, gsentropy};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(v_1),std::to_string(v_2)};
+	saveDataWithParams(results,filename , parameters);
+}
+
+void write_sys2_h1h2_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, double v12_1, double v12_2, int num_v12, const std::string& filename){
+    double N=n1+n2;
+    Eigen::VectorXd v12s = Eigen::VectorXd::Zero(num_v12);
+    Eigen::VectorXd h1 = Eigen::VectorXd::Zero(num_v12);
+    Eigen::VectorXd h2 = Eigen::VectorXd::Zero(num_v12);
+	double v12_step = (v12_2 - v12_1) / (num_v12 - 1);
+    for (int i = 0; i < num_v12; ++i) {
+        double v12 = v12_1 + i * v12_step;
+        v12s[i]= v12;
+        QuantumSystem qs3(n1, n2, ep1,ep2, v_1,v_2,v12);
+        h1[i] = qs3.getH1_expected()[0];
+        h2[i] = qs3.getH2_expected()[0];
+     
+    }
+    std::vector<Eigen::VectorXd> results = {v12s, h1, h2};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(v_1),std::to_string(v_2)};
+	saveDataWithParams(results,filename , parameters);
+}
+
+void write_sys2_gsS_v12_multi(int n1, int n2, double ep1, double ep2,
+                              const std::vector<double>& v1s, const std::vector<double>& v2s,
+                              double v12_1, double v12_2, int num_v12, const std::string& filename) {
+    double N = n1 + n2;
+    Eigen::VectorXd v12s = Eigen::VectorXd::Zero(num_v12);
+    std::vector<Eigen::VectorXd> gsentropies(v1s.size() * v2s.size());
+    double v12_step = (v12_2 - v12_1) / (num_v12 - 1);
+    int count = 0;
+
+        for (size_t k = 0; k < v2s.size(); ++k) {
+            Eigen::VectorXd gsentropy = Eigen::VectorXd::Zero(num_v12);
+            for (int i = 0; i < num_v12; ++i) {
+                double v12 = v12_1 + i * v12_step;
+                v12s[i] = v12;  
+                QuantumSystem qs3(n1, n2, ep1, ep2, v1s[k], v2s[k], v12);
+                gsentropy[i] = qs3.getGroundStateEntropy();
+            }
+            gsentropies[count++] = gsentropy;
+        }
+    
+    std::cout<<"v12"<<v12s<<std::endl;
+    std::vector<Eigen::VectorXd> results = {v12s};
+    results.insert(results.end(), gsentropies.begin(), gsentropies.end());
+    std::vector<std::string> parameters = {std::to_string(n1), std::to_string(n2), std::to_string(ep1), std::to_string(ep2)};
+    for (double v : v1s) parameters.push_back(std::to_string(v));
+    for (double v : v2s) parameters.push_back(std::to_string(v));
+
+    saveDataWithParams(results, filename, parameters);
+}
 
 QuantumSystem::QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, double V2, double V12)
     : n1(n1), n2(n2), ep1(ep1), ep2(ep2), V1(V1), V2(V2), V12(V12),s1(n1 + 1), s2(n2 + 1),  // 确保这里s1和s2先被初始化
@@ -551,8 +657,8 @@ void QuantumSystem::computeEntropy() {
         	if (eigvals[i] > 0) {
             	entropy(ind_e) -= eigvals[i] * std::log(eigvals[i]);
             }else {
-                std::cerr << "Warning:n, ind_e: " << ind_e
-                          << ", i: " << i << ", eigval: " << eigvals[i] << std::endl;
+                //std::cerr << "Warning:n, ind_e: " << ind_e
+                 //         << ", i: " << i << ", eigval: " << eigvals[i] << std::endl;
             }	
         }
     }
@@ -603,13 +709,13 @@ const VectorXd& QuantumSystem::getEntropy() {
 }
 const VectorXd& QuantumSystem::getH1_expected(){
 	if (!H1_expected_Computed) {
-        computeH1();  
+        computeH1_expected();  
     }
     return H1_expected; 
 }
 const VectorXd& QuantumSystem::getH2_expected(){
 	if (!H2_expected_Computed) {
-        computeH2();  
+        computeH2_expected();  
     }
     return H2_expected; 
 }
@@ -618,15 +724,14 @@ void QuantumSystem::outputResults(const string& filename) {
     if (!H1_expected_Computed) {
         computeH1_expected();  
     }
+
     if (!H2_expected_Computed) {
         computeH2_expected();  
     }
     //  result output 
-    ofstream file(filename);
-    for (int i = 0; i < eigenvalues.size(); ++i) {
-        file << eigenvalues[i] << " " << entropy[i] <<" "<<H1_expected[i] <<" "<<H2_expected[i] << endl;
-    }
-    file.close();
+    std::vector<Eigen::VectorXd> results = {eigenvalues,entropy,H1_expected, H2_expected};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(V1),std::to_string(V2),std::to_string(V12)};
+	saveDataWithParams(results, filename , parameters);
 }
 
 

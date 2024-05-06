@@ -22,6 +22,12 @@ void gs_S_vs_chi(int N, int n, double chi_1, double chi_2, int num_chi, const st
 void gs_S_vs_n(int N, double chi, int n_1, int n_2, int interval, const std::string& filename);
 void gs_S_vs_chi_n(int N, double chi_1, double chi_2, int num_chi, int n_1, int n_2, int interval, const std::string& filename);
 void get_sys2(int n1, int n2, double ep1, double ep2, double V1, double V2, double V12);
+void write_sys2_gsS_v_v12(int n1, int n2, double ep1, double ep2, double v_1,double v_2, int num_v, double v12_1, double v12_2, int num_v12, const std::string& filename);
+void write_sys2_gsS_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, double v12_1, double v12_2, int num_v12, const std::string& filename);
+void write_sys2_gsS_v12_multi(int n1, int n2, double ep1, double ep2,
+                              const std::vector<double>& v1s, const std::vector<double>& v2s,
+                              double v12_1, double v12_2, int num_v12, const std::string& filename);
+void write_sys2_h1h2_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, double v12_1, double v12_2, int num_v12, const std::string& filename);
 
 class QuantumSystem {
 private:

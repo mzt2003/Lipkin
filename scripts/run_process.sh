@@ -9,6 +9,7 @@ echo "Running C++ program..."
 
 echo "Running MATLAB script..."
 export PATH="/Applications/MATLAB_R2023a.app/bin:$PATH"
+
 matlab -batch "run('../matlab/plot_data.m')"
 
 echo "Done."
