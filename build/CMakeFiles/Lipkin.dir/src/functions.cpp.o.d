@@ -1,6 +1,6 @@
 CMakeFiles/Lipkin.dir/src/functions.cpp.o: \
-  /Users/mzt/documents/Lipkin_project/src/functions.cpp \
-  /Users/mzt/documents/Lipkin_project/src/functions.h \
+  /Users/mzt/Documents/Lipkin_project/src/functions.cpp \
+  /Users/mzt/Documents/Lipkin_project/src/functions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \
@@ -614,11 +614,11 @@ CMakeFiles/Lipkin.dir/src/functions.cpp.o: \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /Users/mzt/documents/Lipkin_project/external/cg/include/wignerSymbols.h \
-  /Users/mzt/documents/Lipkin_project/external/cg/include/wignerSymbols/wignerSymbols-cpp.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/include/wignerSymbols.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/include/wignerSymbols/wignerSymbols-cpp.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
-  /Users/mzt/documents/Lipkin_project/external/cg/include/wignerSymbols/wignerSymbols-fortran.h \
-  /Users/mzt/documents/Lipkin_project/external/cg/include/wignerSymbols/commonFunctions.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/include/wignerSymbols/wignerSymbols-fortran.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/include/wignerSymbols/commonFunctions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/stack \

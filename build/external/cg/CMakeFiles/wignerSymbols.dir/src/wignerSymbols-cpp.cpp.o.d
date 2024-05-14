@@ -1,7 +1,7 @@
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o: \
-  /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp \
-  /Users/mzt/documents/Lipkin_project/external/cg/src/../include/wignerSymbols/commonFunctions.h \
-  /Users/mzt/documents/Lipkin_project/external/cg/src/../include/wignerSymbols/wignerSymbols-cpp.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp \
+  /Users/mzt/Documents/Lipkin_project/external/cg/src/../include/wignerSymbols/commonFunctions.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/src/../include/wignerSymbols/wignerSymbols-cpp.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \

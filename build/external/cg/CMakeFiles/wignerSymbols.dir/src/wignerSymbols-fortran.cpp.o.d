@@ -1,6 +1,6 @@
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o: \
-  /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp \
-  /Users/mzt/documents/Lipkin_project/external/cg/src/../include/wignerSymbols/wignerSymbols-fortran.h \
+  /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp \
+  /Users/mzt/Documents/Lipkin_project/external/cg/src/../include/wignerSymbols/wignerSymbols-fortran.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \

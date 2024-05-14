@@ -28,6 +28,7 @@ void write_sys2_gsS_v12_multi(int n1, int n2, double ep1, double ep2,
                               const std::vector<double>& v1s, const std::vector<double>& v2s,
                               double v12_1, double v12_2, int num_v12, const std::string& filename);
 void write_sys2_h1h2_v12(int n1,int n2,double ep1,double ep2, double v_1,double v_2, double v12_1, double v12_2, int num_v12, const std::string& filename);
+void write_sys2_temp_v(int n1,int n2,double ep1,double ep2, double v_1,double v_2, int num_v, const std::string& filename);
 
 class QuantumSystem {
 private:
@@ -42,7 +43,7 @@ private:
     VectorXd H1_expected, H2_expected;
     std::vector<Eigen::MatrixXd> reduced_rho_1;
     std::vector<Eigen::MatrixXd> reduced_rho_2;
-    double gs_E, gs_S;
+    double gs_E, gs_S, gs_temp1, gs_temp2;
     bool hamiltonianComputed = false;
     bool eigenSystemSolved = false;
     bool entropyComputed = false;
@@ -52,6 +53,8 @@ private:
     bool H2_expected_Computed = false;
     bool reduced_rho_1_Computed = false;
     bool reduced_rho_2_Computed = false;
+    bool gs_temp1_Computed = false;
+    bool gs_temp2_Computed = false;
 
 public:
     // Constructor
@@ -64,6 +67,8 @@ public:
 	void computeH2();
 	void computeH1_expected();
 	void computeH2_expected();
+	void compute_gs_temp1();
+	void compute_gs_temp2();
     void outputResults(const string& filename);
     
     const MatrixXd& getHamiltonian() ;
@@ -74,6 +79,9 @@ public:
     double getGroundStateEntropy();
     const VectorXd& getH1_expected();
     const VectorXd& getH2_expected();
+    double get_gs_temp1();
+    double get_gs_temp2();
+
     
 };
 

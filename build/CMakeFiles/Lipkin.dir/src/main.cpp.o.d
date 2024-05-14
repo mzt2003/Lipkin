@@ -1,5 +1,5 @@
 CMakeFiles/Lipkin.dir/src/main.cpp.o: \
-  /Users/mzt/documents/Lipkin_project/src/main.cpp \
+  /Users/mzt/Documents/Lipkin_project/src/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__availability \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
@@ -422,7 +422,7 @@ CMakeFiles/Lipkin.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
-  /Users/mzt/documents/Lipkin_project/src/functions.h \
+  /Users/mzt/Documents/Lipkin_project/src/functions.h \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/Dense \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/Core \
   /opt/homebrew/Cellar/eigen/3.4.0_1/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \

@@ -481,8 +481,27 @@ void write_sys2_gsS_v12_multi(int n1, int n2, double ep1, double ep2,
     saveDataWithParams(results, filename, parameters);
 }
 
+void write_sys2_temp_v(int n1,int n2,double ep1,double ep2, double v_1,double v_2, int num_v, const std::string& filename){
+double N=n1+n2;
+    Eigen::VectorXd vs = Eigen::VectorXd::Zero(num_v);
+    Eigen::VectorXd temp1 = Eigen::VectorXd::Zero(num_v);
+    Eigen::VectorXd temp2 = Eigen::VectorXd::Zero(num_v);
+
+	double v_step = (v_2 - v_1) / (num_v - 1);
+    for (int i = 0; i < num_v; ++i) {
+        double v = v_1 + i * v_step;
+        vs[i]= v;
+        QuantumSystem qs3(n1, n2, ep1,ep2, v,v,v);
+        temp1[i] = qs3.get_gs_temp1();
+        temp2[i] = qs3.get_gs_temp2();
+    }
+    std::vector<Eigen::VectorXd> results = {vs, temp1, temp2};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2)};
+	saveDataWithParams(results,filename , parameters);
+}
+
 QuantumSystem::QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, double V2, double V12)
-    : n1(n1), n2(n2), ep1(ep1), ep2(ep2), V1(V1), V2(V2), V12(V12),s1(n1 + 1), s2(n2 + 1),  // 确保这里s1和s2先被初始化
+    : n1(n1), n2(n2), ep1(ep1), ep2(ep2), V1(V1), V2(V2), V12(V12),s1(n1 + 1), s2(n2 + 1),  // s1 s2 initialized
        reduced_rho_1(s1 * s2),reduced_rho_2(s1 * s2) {
     s1 = n1 + 1;
     s2 = n2 + 1;
@@ -629,6 +648,15 @@ void QuantumSystem::solveEigenSystem() {
     gs_E=eigenvalues(0);
     eigenSystemSolved = true;
     entropyComputed = false; 
+    if (debug_mode){
+    std::ofstream file("../data/coefficients2.txt");
+    if (file.is_open()) {
+        file << eigenvectors << "\n";
+        file.close();
+    } else {
+        std::cerr << "Unable to open file";
+    }
+    }
 }
 void QuantumSystem::computeEntropy() {
 	if (!eigenSystemSolved) {
@@ -670,6 +698,26 @@ void QuantumSystem::computeEntropy() {
     H2_expected_Computed = false;
 
 }
+void QuantumSystem::compute_gs_temp1(){
+	if (!entropyComputed) {
+        computeEntropy();  
+    }
+    if (!H1_expected_Computed) {
+        computeH1_expected();  
+    }
+    gs_temp1=(H1_expected(1)-H1_expected(0))/(entropy(1)-entropy(0));
+    gs_temp1_Computed = true;
+}
+void QuantumSystem::compute_gs_temp2(){
+	if (!entropyComputed) {
+        computeEntropy();  
+    }
+    if (!H2_expected_Computed) {
+        computeH2_expected();  
+    }
+    gs_temp2=(H2_expected(1)-H2_expected(0))/(entropy(1)-entropy(0));
+    gs_temp2_Computed = true;
+}
 
 double QuantumSystem::getGroundStateEntropy() {
     if (!entropyComputed) {
@@ -681,7 +729,7 @@ double QuantumSystem::getGroundStateEnergy() {
     if (!eigenSystemSolved) {
         solveEigenSystem();  
     }
-    return eigenvalues[0];   
+    return gs_E;   
 }
 const MatrixXd& QuantumSystem::getHamiltonian() {
     if (!hamiltonianComputed) {
@@ -718,6 +766,18 @@ const VectorXd& QuantumSystem::getH2_expected(){
         computeH2_expected();  
     }
     return H2_expected; 
+}
+double QuantumSystem::get_gs_temp1() {
+    if (!gs_temp1_Computed) {
+        compute_gs_temp1();  
+    }
+    return gs_temp1;   
+}
+double QuantumSystem::get_gs_temp2() {
+    if (!gs_temp2_Computed) {
+        compute_gs_temp2();  
+    }
+    return gs_temp2;   
 }
 
 void QuantumSystem::outputResults(const string& filename) {

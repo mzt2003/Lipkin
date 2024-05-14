@@ -1,16 +1,16 @@
 %sys1_plotE_S('../data/sys1_Energy_Entropy.txt');
-%sys1_plotS_chi("../data/sys1_S_vs_chi.txt");
+sys1_plotS_chi("../data/sys1_S_vs_chi.txt");
 %sys1_plotS_n('../data/sys1_S_vs_n.txt');
 %sys1_S_chi_n("../data/sys1_S_vs_chi_n.txt");
-%sys2_plotEnergy('../data/sys2_Energy_Entropy.txt');
-%sys2_plotEntropy('../data/sys2_Energy_Entropy.txt');
+%sys2_plotEnergy('../data/sys2_Energy_Entropy_.txt');
+%sys2_plotEntropy('../data/sys2_Energy_Entropy_.txt');
 %sys12_E_S('../data/sys1_Energy_Entropy.txt',"../data/sys2_Energy_Entropy_.txt");
 %sys2_gsS_v_v12("../data/sys2_S_v_v12.txt");
 %sys2_gsS_v12("../data/sys2_S_v12.txt")
 %sys2_gsS_v12_multi("../data/sys2_S_v12_multi.txt")
-sys2_h1h2_v12("../data/sys2_h1h2_v12.txt")
-
-
+%sys2_h1h2_v12("../data/sys2_h1h2_v12.txt")
+%sys2_temp_v("../data/sys2_temp_v.txt")
+1
 
 
 function sys1_plotE_S(filename)
@@ -243,7 +243,7 @@ Energy = data(:, 1);
 Entropy = data(:, 2);
 
 figure;
-plot(Energy, Entropy, '-o');
+plot(Energy, Entropy, '-*');
 xlabel('Energy');
 ylabel('Entropy');
 title(sprintf('Entropy vs Energy - N=%d, $\\chi$=%.2f, n=%d', N, chi, n), 'Interpreter', 'latex');
@@ -416,7 +416,6 @@ chi = data(:, 1);
 h1 = data(:, 2);
 h2 = data(:, 3);
 
-
 figure;
 plot(chi.*(n1+n2), h1, '-o');
 hold on
@@ -430,3 +429,56 @@ text(max(chi*(n1+n2))*0.1+min(chi*(n1+n2))*0.9, max([max(h1),max(h2)])*0.9+min([
 grid on;
 saveas(gcf, strcat('../plot/sys2_h1h2_vs_v12',num2str(n1),num2str(n2),num2str(ep1),num2str(ep2),num2str(V1),num2str(V2),'.png'));
 end
+
+
+
+
+
+
+function sys2_temp_v(filename)
+fid = fopen(filename, 'rt');
+if fid == -1
+    error('File could not be opened.');
+end
+
+params = str2num(fgetl(fid)); 
+n1 = params(1);
+n2 = params(2);
+ep1 = params(3);
+ep2 = params(4);
+
+data = fscanf(fid, '%f %f', [3 inf])'; 
+fclose(fid); 
+chi = data(:, 1);
+entropy = data(:, 2);
+temp2= data(:, 3);
+
+figure;
+plot(chi*(n1+n2), entropy, '-o');
+hold on 
+plot(chi*(n1+n2), temp2);
+hold off
+xlabel('$V\times N$', 'Interpreter', 'latex');
+ylabel('Ground State Temperature');
+legend({'$T_1$','$T_2$'},'Interpreter', 'latex');
+title('Temperature when $V_1=V_2=V_{12}=V$','Interpreter', 'latex');
+grid on;
+str = sprintf('n_1=%d, n_2=%d\n\\epsilon_1=%.2f, \\epsilon_2=%.2f\n', ...
+              n1, n2, ep1, ep2);
+text(max(chi)*0.7+min(chi)*0.3, max(entropy)*0.5, str, 'FontSize', 8); 
+saveas(gcf, strcat('../plot/sys2_temp_vs_v',num2str(n1),num2str(n2),num2str(ep1),num2str(ep2),'.png'));
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

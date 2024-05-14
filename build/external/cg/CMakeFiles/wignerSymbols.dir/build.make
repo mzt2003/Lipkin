@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mzt/documents/Lipkin_project
+CMAKE_SOURCE_DIR = /Users/mzt/Documents/Lipkin_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mzt/documents/Lipkin_project/build
+CMAKE_BINARY_DIR = /Users/mzt/Documents/Lipkin_project/build
 
 # Include any dependencies generated for this target.
 include external/cg/CMakeFiles/wignerSymbols.dir/depend.make
@@ -70,175 +70,175 @@ include external/cg/CMakeFiles/wignerSymbols.dir/progress.make
 include external/cg/CMakeFiles/wignerSymbols.dir/flags.make
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o: /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp
+external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o: external/cg/CMakeFiles/wignerSymbols.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o -MF CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o.d -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o -c /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o -MF CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o.d -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.o -c /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-cpp.cpp -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-cpp.cpp.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o: /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp
+external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o: external/cg/CMakeFiles/wignerSymbols.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o -MF CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o.d -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o -c /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o -MF CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o.d -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.o -c /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.cpp -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.cpp.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran.f -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.o: /Users/mzt/documents/Lipkin_project/external/cg/src/machine.for
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/machine.for -o CMakeFiles/wignerSymbols.dir/src/machine.for.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/machine.for
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/machine.for -o CMakeFiles/wignerSymbols.dir/src/machine.for.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/machine.for.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/machine.for > CMakeFiles/wignerSymbols.dir/src/machine.for.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/machine.for > CMakeFiles/wignerSymbols.dir/src/machine.for.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/machine.for.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/machine.for.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/machine.for -o CMakeFiles/wignerSymbols.dir/src/machine.for.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/machine.for -o CMakeFiles/wignerSymbols.dir/src/machine.for.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/fdump.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/fdump.f -o CMakeFiles/wignerSymbols.dir/src/fdump.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/fdump.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/fdump.f -o CMakeFiles/wignerSymbols.dir/src/fdump.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/fdump.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/fdump.f > CMakeFiles/wignerSymbols.dir/src/fdump.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/fdump.f > CMakeFiles/wignerSymbols.dir/src/fdump.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/fdump.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/fdump.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/fdump.f -o CMakeFiles/wignerSymbols.dir/src/fdump.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/fdump.f -o CMakeFiles/wignerSymbols.dir/src/fdump.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/j4save.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/j4save.f -o CMakeFiles/wignerSymbols.dir/src/j4save.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/j4save.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/j4save.f -o CMakeFiles/wignerSymbols.dir/src/j4save.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/j4save.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/j4save.f > CMakeFiles/wignerSymbols.dir/src/j4save.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/j4save.f > CMakeFiles/wignerSymbols.dir/src/j4save.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/j4save.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/j4save.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/j4save.f -o CMakeFiles/wignerSymbols.dir/src/j4save.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/j4save.f -o CMakeFiles/wignerSymbols.dir/src/j4save.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xercnt.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xercnt.f -o CMakeFiles/wignerSymbols.dir/src/xercnt.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xercnt.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xercnt.f -o CMakeFiles/wignerSymbols.dir/src/xercnt.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xercnt.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xercnt.f > CMakeFiles/wignerSymbols.dir/src/xercnt.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xercnt.f > CMakeFiles/wignerSymbols.dir/src/xercnt.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xercnt.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xercnt.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xercnt.f -o CMakeFiles/wignerSymbols.dir/src/xercnt.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xercnt.f -o CMakeFiles/wignerSymbols.dir/src/xercnt.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xerhlt.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xerhlt.f -o CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xerhlt.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xerhlt.f -o CMakeFiles/wignerSymbols.dir/src/xerhlt.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xerhlt.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xerhlt.f > CMakeFiles/wignerSymbols.dir/src/xerhlt.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xerhlt.f > CMakeFiles/wignerSymbols.dir/src/xerhlt.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerhlt.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xerhlt.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xerhlt.f -o CMakeFiles/wignerSymbols.dir/src/xerhlt.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xerhlt.f -o CMakeFiles/wignerSymbols.dir/src/xerhlt.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xermsg.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xermsg.f -o CMakeFiles/wignerSymbols.dir/src/xermsg.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xermsg.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xermsg.f -o CMakeFiles/wignerSymbols.dir/src/xermsg.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xermsg.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xermsg.f > CMakeFiles/wignerSymbols.dir/src/xermsg.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xermsg.f > CMakeFiles/wignerSymbols.dir/src/xermsg.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xermsg.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xermsg.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xermsg.f -o CMakeFiles/wignerSymbols.dir/src/xermsg.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xermsg.f -o CMakeFiles/wignerSymbols.dir/src/xermsg.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xerprn.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xerprn.f -o CMakeFiles/wignerSymbols.dir/src/xerprn.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xerprn.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xerprn.f -o CMakeFiles/wignerSymbols.dir/src/xerprn.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xerprn.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xerprn.f > CMakeFiles/wignerSymbols.dir/src/xerprn.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xerprn.f > CMakeFiles/wignerSymbols.dir/src/xerprn.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xerprn.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xerprn.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xerprn.f -o CMakeFiles/wignerSymbols.dir/src/xerprn.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xerprn.f -o CMakeFiles/wignerSymbols.dir/src/xerprn.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xersve.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xersve.f -o CMakeFiles/wignerSymbols.dir/src/xersve.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xersve.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xersve.f -o CMakeFiles/wignerSymbols.dir/src/xersve.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xersve.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xersve.f > CMakeFiles/wignerSymbols.dir/src/xersve.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xersve.f > CMakeFiles/wignerSymbols.dir/src/xersve.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xersve.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xersve.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xersve.f -o CMakeFiles/wignerSymbols.dir/src/xersve.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xersve.f -o CMakeFiles/wignerSymbols.dir/src/xersve.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.o: /Users/mzt/documents/Lipkin_project/external/cg/src/xgetua.f
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/xgetua.f -o CMakeFiles/wignerSymbols.dir/src/xgetua.f.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/xgetua.f
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/xgetua.f -o CMakeFiles/wignerSymbols.dir/src/xgetua.f.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/xgetua.f.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/xgetua.f > CMakeFiles/wignerSymbols.dir/src/xgetua.f.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/xgetua.f > CMakeFiles/wignerSymbols.dir/src/xgetua.f.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/xgetua.f.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/xgetua.f.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/xgetua.f -o CMakeFiles/wignerSymbols.dir/src/xgetua.f.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/xgetua.f -o CMakeFiles/wignerSymbols.dir/src/xgetua.f.s
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o: external/cg/CMakeFiles/wignerSymbols.dir/flags.make
-external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o: /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o
+external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o: /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building Fortran object external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing Fortran source to CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.i"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.i
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 > CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.i
 
 external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling Fortran source to assembly CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.s"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.s
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && /opt/homebrew/bin/gfortran $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /Users/mzt/Documents/Lipkin_project/external/cg/src/wignerSymbols-fortran-c-binding.f90 -o CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.s
 
 # Object files for target wignerSymbols
 wignerSymbols_OBJECTS = \
@@ -274,19 +274,19 @@ external/cg/libwignerSymbols.a: external/cg/CMakeFiles/wignerSymbols.dir/src/xge
 external/cg/libwignerSymbols.a: external/cg/CMakeFiles/wignerSymbols.dir/src/wignerSymbols-fortran-c-binding.f90.o
 external/cg/libwignerSymbols.a: external/cg/CMakeFiles/wignerSymbols.dir/build.make
 external/cg/libwignerSymbols.a: external/cg/CMakeFiles/wignerSymbols.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libwignerSymbols.a"
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -P CMakeFiles/wignerSymbols.dir/cmake_clean_target.cmake
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wignerSymbols.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libwignerSymbols.a"
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -P CMakeFiles/wignerSymbols.dir/cmake_clean_target.cmake
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wignerSymbols.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 external/cg/CMakeFiles/wignerSymbols.dir/build: external/cg/libwignerSymbols.a
 .PHONY : external/cg/CMakeFiles/wignerSymbols.dir/build
 
 external/cg/CMakeFiles/wignerSymbols.dir/clean:
-	cd /Users/mzt/documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -P CMakeFiles/wignerSymbols.dir/cmake_clean.cmake
+	cd /Users/mzt/Documents/Lipkin_project/build/external/cg && $(CMAKE_COMMAND) -P CMakeFiles/wignerSymbols.dir/cmake_clean.cmake
 .PHONY : external/cg/CMakeFiles/wignerSymbols.dir/clean
 
 external/cg/CMakeFiles/wignerSymbols.dir/depend:
-	cd /Users/mzt/documents/Lipkin_project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mzt/documents/Lipkin_project /Users/mzt/documents/Lipkin_project/external/cg /Users/mzt/documents/Lipkin_project/build /Users/mzt/documents/Lipkin_project/build/external/cg /Users/mzt/documents/Lipkin_project/build/external/cg/CMakeFiles/wignerSymbols.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/mzt/Documents/Lipkin_project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mzt/Documents/Lipkin_project /Users/mzt/Documents/Lipkin_project/external/cg /Users/mzt/Documents/Lipkin_project/build /Users/mzt/Documents/Lipkin_project/build/external/cg /Users/mzt/Documents/Lipkin_project/build/external/cg/CMakeFiles/wignerSymbols.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : external/cg/CMakeFiles/wignerSymbols.dir/depend
 

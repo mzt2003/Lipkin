@@ -54,10 +54,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mzt/documents/Lipkin_project
+CMAKE_SOURCE_DIR = /Users/mzt/Documents/Lipkin_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mzt/documents/Lipkin_project/build
+CMAKE_BINARY_DIR = /Users/mzt/Documents/Lipkin_project/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -98,14 +98,14 @@ external/cg/clean: external/cg/CMakeFiles/wignerSymbols.dir/clean
 CMakeFiles/Lipkin.dir/all: external/cg/CMakeFiles/wignerSymbols.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lipkin.dir/build.make CMakeFiles/Lipkin.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lipkin.dir/build.make CMakeFiles/Lipkin.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=1,2,3 "Built target Lipkin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=1,2,3 "Built target Lipkin"
 .PHONY : CMakeFiles/Lipkin.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Lipkin.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/documents/Lipkin_project/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/Documents/Lipkin_project/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Lipkin.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/documents/Lipkin_project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/Documents/Lipkin_project/build/CMakeFiles 0
 .PHONY : CMakeFiles/Lipkin.dir/rule
 
 # Convenience name for target.
@@ -124,14 +124,14 @@ CMakeFiles/Lipkin.dir/clean:
 external/cg/CMakeFiles/wignerSymbols.dir/all:
 	$(MAKE) $(MAKESILENT) -f external/cg/CMakeFiles/wignerSymbols.dir/build.make external/cg/CMakeFiles/wignerSymbols.dir/depend
 	$(MAKE) $(MAKESILENT) -f external/cg/CMakeFiles/wignerSymbols.dir/build.make external/cg/CMakeFiles/wignerSymbols.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target wignerSymbols"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target wignerSymbols"
 .PHONY : external/cg/CMakeFiles/wignerSymbols.dir/all
 
 # Build rule for subdir invocation for target.
 external/cg/CMakeFiles/wignerSymbols.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/documents/Lipkin_project/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/Documents/Lipkin_project/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external/cg/CMakeFiles/wignerSymbols.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/documents/Lipkin_project/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mzt/Documents/Lipkin_project/build/CMakeFiles 0
 .PHONY : external/cg/CMakeFiles/wignerSymbols.dir/rule
 
 # Convenience name for target.

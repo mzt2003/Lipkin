@@ -1,6 +1,6 @@
-/Users/mzt/documents/Lipkin_project/build/CMakeFiles/Lipkin.dir
-/Users/mzt/documents/Lipkin_project/build/CMakeFiles/edit_cache.dir
-/Users/mzt/documents/Lipkin_project/build/CMakeFiles/rebuild_cache.dir
-/Users/mzt/documents/Lipkin_project/build/external/cg/CMakeFiles/wignerSymbols.dir
-/Users/mzt/documents/Lipkin_project/build/external/cg/CMakeFiles/edit_cache.dir
-/Users/mzt/documents/Lipkin_project/build/external/cg/CMakeFiles/rebuild_cache.dir
+/Users/mzt/Documents/Lipkin_project/build/CMakeFiles/Lipkin.dir
+/Users/mzt/Documents/Lipkin_project/build/CMakeFiles/edit_cache.dir
+/Users/mzt/Documents/Lipkin_project/build/CMakeFiles/rebuild_cache.dir
+/Users/mzt/Documents/Lipkin_project/build/external/cg/CMakeFiles/wignerSymbols.dir
+/Users/mzt/Documents/Lipkin_project/build/external/cg/CMakeFiles/edit_cache.dir
+/Users/mzt/Documents/Lipkin_project/build/external/cg/CMakeFiles/rebuild_cache.dir

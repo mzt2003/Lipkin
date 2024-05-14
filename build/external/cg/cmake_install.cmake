@@ -1,4 +1,4 @@
-# Install script for directory: /Users/mzt/documents/Lipkin_project/external/cg
+# Install script for directory: /Users/mzt/Documents/Lipkin_project/external/cg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

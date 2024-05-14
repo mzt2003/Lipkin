@@ -53,10 +53,10 @@ RM = /opt/homebrew/Cellar/cmake/3.29.0/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mzt/documents/Lipkin_project
+CMAKE_SOURCE_DIR = /Users/mzt/Documents/Lipkin_project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mzt/documents/Lipkin_project/build
+CMAKE_BINARY_DIR = /Users/mzt/Documents/Lipkin_project/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lipkin.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/Lipkin.dir/progress.make
 include CMakeFiles/Lipkin.dir/flags.make
 
 CMakeFiles/Lipkin.dir/src/main.cpp.o: CMakeFiles/Lipkin.dir/flags.make
-CMakeFiles/Lipkin.dir/src/main.cpp.o: /Users/mzt/documents/Lipkin_project/src/main.cpp
+CMakeFiles/Lipkin.dir/src/main.cpp.o: /Users/mzt/Documents/Lipkin_project/src/main.cpp
 CMakeFiles/Lipkin.dir/src/main.cpp.o: CMakeFiles/Lipkin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lipkin.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lipkin.dir/src/main.cpp.o -MF CMakeFiles/Lipkin.dir/src/main.cpp.o.d -o CMakeFiles/Lipkin.dir/src/main.cpp.o -c /Users/mzt/documents/Lipkin_project/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lipkin.dir/src/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lipkin.dir/src/main.cpp.o -MF CMakeFiles/Lipkin.dir/src/main.cpp.o.d -o CMakeFiles/Lipkin.dir/src/main.cpp.o -c /Users/mzt/Documents/Lipkin_project/src/main.cpp
 
 CMakeFiles/Lipkin.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lipkin.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/documents/Lipkin_project/src/main.cpp > CMakeFiles/Lipkin.dir/src/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/Documents/Lipkin_project/src/main.cpp > CMakeFiles/Lipkin.dir/src/main.cpp.i
 
 CMakeFiles/Lipkin.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lipkin.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/documents/Lipkin_project/src/main.cpp -o CMakeFiles/Lipkin.dir/src/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/Documents/Lipkin_project/src/main.cpp -o CMakeFiles/Lipkin.dir/src/main.cpp.s
 
 CMakeFiles/Lipkin.dir/src/functions.cpp.o: CMakeFiles/Lipkin.dir/flags.make
-CMakeFiles/Lipkin.dir/src/functions.cpp.o: /Users/mzt/documents/Lipkin_project/src/functions.cpp
+CMakeFiles/Lipkin.dir/src/functions.cpp.o: /Users/mzt/Documents/Lipkin_project/src/functions.cpp
 CMakeFiles/Lipkin.dir/src/functions.cpp.o: CMakeFiles/Lipkin.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lipkin.dir/src/functions.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lipkin.dir/src/functions.cpp.o -MF CMakeFiles/Lipkin.dir/src/functions.cpp.o.d -o CMakeFiles/Lipkin.dir/src/functions.cpp.o -c /Users/mzt/documents/Lipkin_project/src/functions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lipkin.dir/src/functions.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lipkin.dir/src/functions.cpp.o -MF CMakeFiles/Lipkin.dir/src/functions.cpp.o.d -o CMakeFiles/Lipkin.dir/src/functions.cpp.o -c /Users/mzt/Documents/Lipkin_project/src/functions.cpp
 
 CMakeFiles/Lipkin.dir/src/functions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Lipkin.dir/src/functions.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/documents/Lipkin_project/src/functions.cpp > CMakeFiles/Lipkin.dir/src/functions.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mzt/Documents/Lipkin_project/src/functions.cpp > CMakeFiles/Lipkin.dir/src/functions.cpp.i
 
 CMakeFiles/Lipkin.dir/src/functions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Lipkin.dir/src/functions.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/documents/Lipkin_project/src/functions.cpp -o CMakeFiles/Lipkin.dir/src/functions.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mzt/Documents/Lipkin_project/src/functions.cpp -o CMakeFiles/Lipkin.dir/src/functions.cpp.s
 
 # Object files for target Lipkin
 Lipkin_OBJECTS = \
@@ -105,16 +105,16 @@ Lipkin_OBJECTS = \
 # External object files for target Lipkin
 Lipkin_EXTERNAL_OBJECTS =
 
-/Users/mzt/documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/src/main.cpp.o
-/Users/mzt/documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/src/functions.cpp.o
-/Users/mzt/documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/build.make
-/Users/mzt/documents/Lipkin_project/bin/Lipkin: external/cg/libwignerSymbols.a
-/Users/mzt/documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mzt/documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /Users/mzt/documents/Lipkin_project/bin/Lipkin"
+/Users/mzt/Documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/src/main.cpp.o
+/Users/mzt/Documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/src/functions.cpp.o
+/Users/mzt/Documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/build.make
+/Users/mzt/Documents/Lipkin_project/bin/Lipkin: external/cg/libwignerSymbols.a
+/Users/mzt/Documents/Lipkin_project/bin/Lipkin: CMakeFiles/Lipkin.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/mzt/Documents/Lipkin_project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /Users/mzt/Documents/Lipkin_project/bin/Lipkin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lipkin.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Lipkin.dir/build: /Users/mzt/documents/Lipkin_project/bin/Lipkin
+CMakeFiles/Lipkin.dir/build: /Users/mzt/Documents/Lipkin_project/bin/Lipkin
 .PHONY : CMakeFiles/Lipkin.dir/build
 
 CMakeFiles/Lipkin.dir/clean:
@@ -122,6 +122,6 @@ CMakeFiles/Lipkin.dir/clean:
 .PHONY : CMakeFiles/Lipkin.dir/clean
 
 CMakeFiles/Lipkin.dir/depend:
-	cd /Users/mzt/documents/Lipkin_project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mzt/documents/Lipkin_project /Users/mzt/documents/Lipkin_project /Users/mzt/documents/Lipkin_project/build /Users/mzt/documents/Lipkin_project/build /Users/mzt/documents/Lipkin_project/build/CMakeFiles/Lipkin.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/mzt/Documents/Lipkin_project/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mzt/Documents/Lipkin_project /Users/mzt/Documents/Lipkin_project /Users/mzt/Documents/Lipkin_project/build /Users/mzt/Documents/Lipkin_project/build /Users/mzt/Documents/Lipkin_project/build/CMakeFiles/Lipkin.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Lipkin.dir/depend
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/Users/mzt/documents/Lipkin_project/bin/Lipkin"
-  "/Users/mzt/documents/Lipkin_project/bin/Lipkin.pdb"
+  "/Users/mzt/Documents/Lipkin_project/bin/Lipkin"
+  "/Users/mzt/Documents/Lipkin_project/bin/Lipkin.pdb"
   "CMakeFiles/Lipkin.dir/src/functions.cpp.o"
   "CMakeFiles/Lipkin.dir/src/functions.cpp.o.d"
   "CMakeFiles/Lipkin.dir/src/main.cpp.o"
