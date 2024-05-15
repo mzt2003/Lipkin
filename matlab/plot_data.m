@@ -10,6 +10,7 @@ sys1_plotS_chi("../data/sys1_S_vs_chi.txt");
 %sys2_gsS_v12_multi("../data/sys2_S_v12_multi.txt")
 %sys2_h1h2_v12("../data/sys2_h1h2_v12.txt")
 %sys2_temp_v("../data/sys2_temp_v.txt")
+sys2_overlap1_E1("../data/E1_overlap1_.txt")
 1
 
 
@@ -476,6 +477,62 @@ end
 
 
 
+
+function sys2_overlap1_E1(filename)
+fid = fopen(filename, 'rt');
+if fid == -1
+    error('File could not be opened.');
+end
+
+params = str2num(fgetl(fid)); 
+n1 = params(1);
+n2 = params(2);
+ep1 = params(3);
+ep2 = params(4);
+V1 = params(5);
+V2 = params(6);
+V12 = params(7);
+temperature= params(8);
+
+data = fscanf(fid, '%f %f', [2, inf])'; 
+fclose(fid); 
+Energy = data(:, 1);
+overlap= data(:,2);
+positiveIndices = overlap > 0;
+filteredEnergy = Energy(positiveIndices);
+filteredOverlap = overlap(positiveIndices);
+prediction_= exp(-(filteredEnergy)./temperature);
+Z=sum(prediction_);
+prediction=prediction_./Z
+
+figure;
+filteredEnergy
+ filteredOverlap
+b= bar(filteredEnergy, filteredOverlap);
+b.FaceColor = [0.7 0.7 1]; % 浅蓝色
+b.FaceAlpha = 0.6;
+hold on
+plot(filteredEnergy, prediction  )
+hold off
+xlabel('Energy')
+ylabel('Overlap')
+set(gca, 'YScale', 'log');
+ax = gca;
+minOverlap = min(filteredOverlap(filteredOverlap > 0)); 
+maxOverlap = max(filteredOverlap); 
+
+minExp = floor(log10(minOverlap));
+maxExp = ceil(log10(maxOverlap));
+ax.YTick = 10.^(minExp:maxExp);
+ax.YTickLabel = arrayfun(@(x) sprintf('10^{%d}', log10(x)), ax.YTick, 'UniformOutput', false);
+
+%grid on;
+legend({'', '$e^{-E/T}/Z$'}, 'Interpreter', 'latex');
+str=sprintf('n_1=%d, n_2=%d,\n \\epsilon_1=%.2f, \\epsilon_2=%.2f,\n V_1\\times N =%.2f, V_2\\times N=%.2f, V_{12}\\times N= %.2f \n T=%.4f', n1, n2, ep1, ep2, V1*(n1+n2), V2*(n1+n2), V12*(n1+n2), temperature);
+%text(max(Energy)*0.1+min(Energy)*0.9, max(filteredOverlap)*0.8+min(filteredOverlap)*0.2, str, 'FontSize', 8); 
+text(max(Energy)*0.1+min(Energy)*0.9, min(filteredOverlap)*1000, str, 'FontSize', 8); 
+saveas(gcf, strcat('../plot/overlap1_E1_',num2str(n1),num2str(n2),num2str(ep1),num2str(ep2),num2str(V1),num2str(V2),num2str(V12),'.png'));
+end
 
 
 

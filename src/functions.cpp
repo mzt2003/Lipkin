@@ -527,6 +527,8 @@ QuantumSystem::QuantumSystem(int n1, int n2, double ep1, double ep2, double V1, 
         matrix = MatrixXd::Zero(s2, s2); 
     }
     entropy = VectorXd::Zero(s1 * s2);
+    overlap1= VectorXd::Zero(s1);
+    overlap2= VectorXd::Zero(s2);
 }
 
 void QuantumSystem::computeHamiltonian() {
@@ -668,14 +670,16 @@ void QuantumSystem::computeEntropy() {
         MatrixXd rho = t1.transpose() * t1;
         reduced_rho_1[ii] = rho;  
         reduced_rho_2[ii] = t1 * t1.transpose();  
-        std::string filename = "../data/reduced_rho111_" + std::to_string(ii) + ".txt";
-        std::ofstream file1(filename);
-        if (file1.is_open()) {
-         file1 << reduced_rho_1[ii] << "\n";
-            file1.close();
-        } else {
-            std::cerr << "Unable to open file: " << filename << std::endl;
-        }        
+        if (debug_mode){
+        	std::string filename = "../data/reduced_rho111_" + std::to_string(ii) + ".txt";
+        	std::ofstream file1(filename);
+        	if (file1.is_open()) {
+         	file1 << reduced_rho_1[ii] << "\n";
+         	   file1.close();
+        	} else {
+        	    std::cerr << "Unable to open file: " << filename << std::endl;
+        	}        
+        }      
      }  
            
     for (int ind_e = 0; ind_e < s1*s2; ++ind_e) {
@@ -717,6 +721,54 @@ void QuantumSystem::compute_gs_temp2(){
     }
     gs_temp2=(H2_expected(1)-H2_expected(0))/(entropy(1)-entropy(0));
     gs_temp2_Computed = true;
+}
+void QuantumSystem::compute_E1sC1(){
+	if (!H1Computed) {
+        computeH1();  
+    }
+    SelfAdjointEigenSolver<MatrixXd> eigensolver(H1);
+    if (eigensolver.info() != Success) abort();
+    E1s = eigensolver.eigenvalues();
+    coefficients1 = eigensolver.eigenvectors();
+    E1sC1_Computed = true;
+    gs_overlap1_Computed = false;
+}
+void QuantumSystem::compute_E2sC2(){
+	if (!H2Computed) {
+        computeH2();  
+    }
+    SelfAdjointEigenSolver<MatrixXd> eigensolver(H2);
+    if (eigensolver.info() != Success) abort();
+    E2s = eigensolver.eigenvalues();
+    coefficients2 = eigensolver.eigenvectors();
+    E2sC2_Computed = true;
+    gs_overlap2_Computed = false;
+}
+void QuantumSystem::compute_gs_overlap1(){
+	if (!E1sC1_Computed){
+		compute_E1sC1();
+	}
+	if (!reduced_rho_1_Computed){
+		computeEntropy();
+	}
+	for (int i = 0; i < coefficients1.cols(); ++i) {
+        Eigen::VectorXd col = coefficients1.col(i);
+        overlap1(i) = col.transpose() * reduced_rho_1[0] * col;
+    }
+    gs_overlap1_Computed= true;
+}
+void QuantumSystem::compute_gs_overlap2(){
+	if (!E2sC2_Computed){
+		compute_E2sC2();
+	}
+	if (!reduced_rho_2_Computed){
+		computeEntropy();
+	}
+	for (int i = 0; i < coefficients2.cols(); ++i) {
+        Eigen::VectorXd col = coefficients2.col(i);
+        overlap2(i) = col.transpose() * reduced_rho_2[0] * col;
+    }
+    gs_overlap2_Computed= true;
 }
 
 double QuantumSystem::getGroundStateEntropy() {
@@ -791,6 +843,28 @@ void QuantumSystem::outputResults(const string& filename) {
     //  result output 
     std::vector<Eigen::VectorXd> results = {eigenvalues,entropy,H1_expected, H2_expected};
 	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(V1),std::to_string(V2),std::to_string(V12)};
+	saveDataWithParams(results, filename , parameters);
+}
+void QuantumSystem::outputE1soverlap1(const string& filename){
+	if (!gs_overlap1_Computed) {
+        compute_gs_overlap1();  
+    }
+    if (!gs_temp1_Computed) {
+        compute_gs_temp1();  
+    }
+	std::vector<Eigen::VectorXd> results = {E1s, overlap1};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(V1),std::to_string(V2),std::to_string(V12), std::to_string(gs_temp1)};
+	saveDataWithParams(results, filename , parameters);
+}
+void QuantumSystem::outputE2soverlap2(const string& filename){
+	if (!gs_overlap2_Computed) {
+        compute_gs_overlap2();  
+    }
+    if (!gs_temp1_Computed) {
+        compute_gs_temp2();  
+    }
+	std::vector<Eigen::VectorXd> results = {E2s, overlap2};
+	std::vector<std::string> parameters = {std::to_string(n1),std::to_string(n2),std::to_string(ep1),std::to_string(ep2),std::to_string(V1),std::to_string(V2),std::to_string(V12), std::to_string(gs_temp2)};
 	saveDataWithParams(results, filename , parameters);
 }
 

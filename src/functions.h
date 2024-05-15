@@ -43,6 +43,12 @@ private:
     VectorXd H1_expected, H2_expected;
     std::vector<Eigen::MatrixXd> reduced_rho_1;
     std::vector<Eigen::MatrixXd> reduced_rho_2;
+    MatrixXd coefficients1;
+    MatrixXd coefficients2;
+    VectorXd E1s;
+    VectorXd E2s;
+    VectorXd overlap1;
+    VectorXd overlap2;
     double gs_E, gs_S, gs_temp1, gs_temp2;
     bool hamiltonianComputed = false;
     bool eigenSystemSolved = false;
@@ -55,6 +61,10 @@ private:
     bool reduced_rho_2_Computed = false;
     bool gs_temp1_Computed = false;
     bool gs_temp2_Computed = false;
+    bool E1sC1_Computed= false;
+    bool E2sC2_Computed = false;
+    bool gs_overlap1_Computed = false;
+    bool gs_overlap2_Computed = false;
 
 public:
     // Constructor
@@ -69,8 +79,14 @@ public:
 	void computeH2_expected();
 	void compute_gs_temp1();
 	void compute_gs_temp2();
+	void compute_E1sC1();
+	void compute_E2sC2();
+	void compute_gs_overlap1();
+	void compute_gs_overlap2();
     void outputResults(const string& filename);
-    
+    void outputE1soverlap1(const string& filename);
+    void outputE2soverlap2(const string& filename);
+
     const MatrixXd& getHamiltonian() ;
     const VectorXd& getEigenvalues();
     const MatrixXd& getEigenvectors(); 

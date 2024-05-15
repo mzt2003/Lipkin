@@ -12,10 +12,10 @@ bool debug_mode=0;
 
 int main() {
 	// Calculate a certain system, save E and S
-    get_system(40, 10.0, 20, "../data/sys1_Energy_Entropy.txt"); //int N, double chi, int n
+    //get_system(30, 2.5, 20, "../data/sys1_Energy_Entropy.txt"); //int N, double chi, int n
     
 	// Calculate gs_S_vs_chi, save chi and gsS to "../data/S_vs_chi.txt"
-	gs_S_vs_chi(100, 50, 0, 3, 100, "../data/sys1_S_vs_chi.txt"); //int N, int n, double chi_1, chi_2, num_chi
+	//gs_S_vs_chi(40, 20, 0, 3, 30, "../data/sys1_S_vs_chi.txt"); //int N, int n, double chi_1, chi_2, num_chi
 	
 	//save n and gsS
 	//gs_S_vs_n(100, 2, 10, 90, 2, "../data/sys1_S_vs_n.txt"); //int N, double chi, int n1 , n2, interval
@@ -23,8 +23,11 @@ int main() {
 	// save chi, n and gsS, input: int N double chi_1, chi_2, num_chi , int n1 , n2, interval, path
 	//gs_S_vs_chi_n(100, 0, 3.5, 5, 40, 60, 5, "../data/sys1_S_vs_chi_n.txt");
 	
-	QuantumSystem qs2(20, 20, 1.5, 0.5, 0.1/39.0, 0.1/39.0, 0.1/39.0);
+	QuantumSystem qs2(20, 80, 1.0, 1.0, 1/99.0, 1/99.0, 0.03/99.0);
     qs2.outputResults("../data/sys2_Energy_Entropy_.txt");
+    //qs2.compute_gs_overlap1();
+    qs2.outputE1soverlap1("../data/E1_overlap1_.txt");
+    qs2.outputE2soverlap2("../data/E2_overlap2_.txt");
     double a, b;
     a=qs2.get_gs_temp1();
     b=qs2.get_gs_temp2();
